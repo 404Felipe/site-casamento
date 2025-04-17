@@ -1,0 +1,370 @@
+/* Estilos gerais (mantenha os existentes) */
+body {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f4f0;
+    color: #52443d;
+    line-height: 1.8;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #e8ddd5;
+    padding: 40px 20px; /* Reduzir o padding vertical e horizontal */
+    text-align: center;
+    margin-bottom: 30px; /* Reduzir a margem inferior */
+    border-bottom: 1px solid #d3c6bd;
+}
+
+header h1 {
+    color: #3c312e;
+    font-size: 2.5em; /* Reduzir o tamanho da fonte do título */
+    margin-bottom: 15px; /* Reduzir a margem inferior */
+    letter-spacing: 1px;
+    font-family: 'Playfair Display', serif;
+}
+
+header p {
+    color: #7a6e67;
+    font-size: 1em; /* Reduzir o tamanho da fonte do subtítulo */
+    margin-bottom: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.presentes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Reduzir o tamanho mínimo dos itens */
+    gap: 20px; /* Reduzir o espaçamento entre os itens */
+    padding: 20px; /* Reduzir o padding geral */
+    max-width: 100%; /* Ocupar a largura total em telas menores */
+    margin: 0 auto;
+}
+
+.presente-item {
+    background-color: #fff;
+    border-radius: 10px; /* Arredondamento menor */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.presente-item:hover {
+    transform: translateY(-4px); /* Menos elevação no hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Sombra menor no hover */
+}
+
+.presente-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #f0ece8;
+    border-radius: 10px 10px 0 0; /* Arredondamento menor */
+    display: block;
+}
+
+.presente-info {
+    padding: 15px; /* Reduzir o padding interno */
+    text-align: center;
+    flex-grow: 1;
+}
+
+.presente-info h3 {
+    color: #3c312e;
+    font-size: 1.3em; /* Reduzir o tamanho da fonte do nome */
+    margin-top: 0;
+    margin-bottom: 8px; /* Reduzir a margem inferior */
+    font-family: 'Playfair Display', serif;
+}
+
+.presente-info p {
+    color: #7a6e67;
+    font-size: 0.9em; /* Reduzir o tamanho da fonte do preço */
+    margin-bottom: 15px; /* Reduzir a margem inferior */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.presente-acoes {
+    padding: 15px; /* Reduzir o padding */
+    background-color: #f9f9f9;
+    border-top: 1px solid #f0ece8;
+    text-align: center;
+    border-radius: 0 0 10px 10px; /* Arredondamento menor */
+}
+
+.presente-acoes button, .presente-acoes a {
+    display: inline-block;
+    padding: 10px 20px; /* Reduzir o padding dos botões */
+    border-radius: 8px; /* Arredondamento menor dos botões */
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.2s ease;
+    font-size: 0.9em; /* Reduzir o tamanho da fonte dos botões */
+    margin: 5px; /* Reduzir a margem dos botões */
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.presente-detalhes {
+    padding: 15px; /* Reduzir o padding */
+    background-color: #fff;
+    border-top: 1px solid #f0ece8;
+    text-align: center;
+    animation: slideIn 0.3s ease-out;
+}
+
+.presente-detalhes h4 {
+    color: #3c312e;
+    font-size: 1.2em; /* Reduzir o tamanho da fonte do título da reserva */
+    margin-top: 0;
+    margin-bottom: 10px; /* Reduzir a margem inferior */
+    font-family: 'Playfair Display', serif;
+}
+
+.presente-detalhes input[type="text"] {
+    padding: 10px; /* Reduzir o padding do input */
+    margin-bottom: 15px; /* Reduzir a margem inferior */
+    border: 1px solid #d3c6bd;
+    border-radius: 6px; /* Arredondamento menor do input */
+    width: 90%; /* Aumentar a largura em mobile */
+    max-width: 300px; /* Manter um máximo */
+    font-size: 0.9em; /* Reduzir o tamanho da fonte do input */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.presente-detalhes button {
+    background-color: #a8dadc;
+    color: #fff;
+    padding: 10px 20px; /* Reduzir o padding do botão de confirmar */
+    border: none;
+    border-radius: 8px; /* Arredondamento menor */
+    cursor: pointer;
+    font-size: 0.9em; /* Reduzir o tamanho da fonte */
+    transition: background-color 0.2s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 30px auto; /* Reduzir a margem superior e inferior */
+    padding: 20px; /* Reduzir o padding interno */
+    border: 1px solid #888;
+    width: 90%; /* Aumentar a largura do modal em mobile */
+    border-radius: 10px; /* Arredondamento menor */
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+    font-size: 24px; /* Reduzir o tamanho do botão de fechar */
+}
+
+#modal-pix h3, #admin-panel h3 {
+    font-size: 1.6em; /* Reduzir o tamanho da fonte do título do modal */
+    margin-bottom: 15px; /* Reduzir a margem inferior */
+}
+
+#modal-pix p, #admin-panel label {
+    font-size: 1em; /* Reduzir o tamanho da fonte do texto do modal */
+    margin-bottom: 10px; /* Reduzir a margem inferior */
+}
+
+#modal-pix #chave-pix {
+    font-size: 1.1em; /* Reduzir o tamanho da fonte da chave Pix */
+    margin-bottom: 15px; /* Reduzir a margem inferior */
+}
+
+#modal-pix button#copiar-pix-btn, #admin-panel button#entrar-admin-btn {
+    padding: 12px 20px; /* Reduzir o padding dos botões do modal */
+    font-size: 1em; /* Reduzir o tamanho da fonte dos botões do modal */
+    margin-top: 10px; /* Reduzir a margem superior */
+    border-radius: 8px; /* Arredondamento menor */
+}
+
+#admin-panel input[type=password] {
+    padding: 10px; /* Reduzir o padding do input da senha */
+    margin-bottom: 20px; /* Reduzir a margem inferior */
+    font-size: 1em; /* Reduzir o tamanho da fonte do input da senha */
+    border-radius: 6px; /* Arredondamento menor */
+}
+
+#reservas-lista-admin h4 {
+    font-size: 1.4em; /* Reduzir o tamanho da fonte do título das reservas */
+    margin-top: 20px; /* Reduzir a margem superior */
+}
+
+#lista-reservas li {
+    font-size: 1em; /* Reduzir o tamanho da fonte dos itens da lista */
+    padding: 10px 0; /* Reduzir o padding vertical */
+}
+
+footer {
+    padding: 30px 20px; /* Reduzir o padding */
+    margin-top: 40px; /* Reduzir a margem superior */
+    font-size: 0.9em; /* Reduzir o tamanho da fonte */
+    flex-direction: column; /* Empilhar os botões em telas menores */
+    align-items: center; /* Centralizar os itens */
+}
+
+.footer-links button {
+    margin: 10px; /* Aumentar um pouco a margem entre os botões empilhados */
+    padding: 10px 20px; /* Reduzir o padding dos botões do footer */
+    font-size: 1em; /* Manter o tamanho da fonte para melhor toque */
+}
+
+#instructions {
+    padding: 15px; /* Reduzir o padding */
+    margin-bottom: 20px; /* Reduzir a margem inferior */
+    font-size: 1em; /* Manter o tamanho da fonte para leitura */
+}
+
+.reserva-feedback {
+    font-size: 0.9em; /* Reduzir o tamanho da fonte do feedback */
+    margin-top: 8px; /* Reduzir a margem superior */
+}
+
+/* Media query para telas menores (ex: até 768px de largura) */
+@media (max-width: 768px) {
+    header {
+        padding: 30px 15px;
+        margin-bottom: 20px;
+    }
+
+    header h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    .presentes-grid {
+        grid-template-columns: 1fr; /* Exibir um item por linha em telas menores */
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .presente-info {
+        padding: 15px;
+    }
+
+    .presente-info h3 {
+        font-size: 1.4em;
+        margin-bottom: 6px;
+    }
+
+    .presente-info p {
+        font-size: 0.85em;
+        margin-bottom: 10px;
+    }
+
+    .presente-acoes button, .presente-acoes a {
+        padding: 8px 16px;
+        font-size: 0.9em;
+        margin: 4px;
+        border-radius: 6px;
+    }
+
+    .presente-detalhes {
+        padding: 15px;
+    }
+
+    .presente-detalhes h4 {
+        font-size: 1.1em;
+        margin-bottom: 8px;
+    }
+
+    .presente-detalhes input[type="text"] {
+        font-size: 0.9em;
+        margin-bottom: 12px;
+        border-radius: 4px;
+    }
+
+    .presente-detalhes button {
+        padding: 10px 18px;
+        font-size: 0.9em;
+        border-radius: 6px;
+    }
+
+    .modal-content {
+        margin: 20px auto;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .close-button {
+        font-size: 20px;
+    }
+
+    #modal-pix h3, #admin-panel h3 {
+        font-size: 1.4em;
+        margin-bottom: 12px;
+    }
+
+    #modal-pix p, #admin-panel label {
+        font-size: 0.9em;
+        margin-bottom: 8px;
+    }
+
+    #modal-pix #chave-pix {
+        font-size: 1em;
+        margin-bottom: 12px;
+    }
+
+    #modal-pix button#copiar-pix-btn, #admin-panel button#entrar-admin-btn {
+        padding: 10px 16px;
+        font-size: 0.9em;
+        margin-top: 10px;
+        border-radius: 6px;
+    }
+
+    #admin-panel input[type=password] {
+        font-size: 0.9em;
+        margin-bottom: 20px;
+        border-radius: 4px;
+    }
+
+    #reservas-lista-admin h4 {
+        font-size: 1.2em;
+        margin-top: 15px;
+    }
+
+    #lista-reservas li {
+        font-size: 0.9em;
+        padding: 8px 0;
+    }
+
+    footer {
+        padding: 20px 15px;
+        margin-top: 30px;
+        font-size: 0.85em;
+    }
+
+    .footer-links button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+        margin: 8px;
+        border-radius: 6px;
+    }
+
+    #instructions {
+        padding: 10px;
+        margin-bottom: 15px;
+        font-size: 0.9em;
+    }
+
+    .reserva-feedback {
+        font-size: 0.8em;
+        margin-top: 6px;
+    }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+ <html lang="pt-BR">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lista de Presentes - Nosso Casamento</title>
+     <link rel="stylesheet" href="style.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+ </head>
+ <body>
+     <header>
+         <h1>Nossa Lista de Presentes</h1>
+         <p>Sua presença é o nosso maior presente, mas se desejar contribuir para nossa nova jornada...</p>
+     </header>
+ ​
+     <main class="presentes-grid" id="presentes-lista">
+         </main>
+ ​
+     <footer>
+         <div class="footer-links">
+             <button id="pix-btn">Presentear via Pix</button>
+             <button id="admin-btn">Admin</button>
+         </div>
+         <p>&copy; Luana & Felipe - 2025</p>
+     </footer>
+ ​
+     <div id="modal-pix" class="modal">
+         <div class="modal-content">
+             <span class="close-button">&times;</span>
+             <h3>Enviar um Presente via Pix</h3>
+             <p>Chave Pix: 24999036283</p>
+             <p id="chave-pix"></p>  <button id="copiar-pix-btn">Copiar Chave Pix</button>
+             <p id="pix-copiado-mensagem" class="mensagem-sucesso" style="display:none;">Chave Pix copiada!</p>
+         </div>
+     </div>
+ ​
+     <div id="admin-panel" class="modal">
+         <div class="modal-content">
+             <span class="close-button">&times;</span>
+             <h3>Painel de Administração</h3>
+             <label for="admin-senha">Senha:</label>
+             <input type="password" id="admin-senha">
+             <button id="entrar-admin-btn">Entrar</button>
+             <div id="reservas-lista-admin" style="display:none;">
+                 <h4>Lista de Reservas:</h4>
+                 <ul id="lista-reservas">
+                     </ul>
+             </div>
+             <p id="admin-erro-mensagem" class="mensagem-erro" style="display:none;">Senha incorreta.</p>
+         </div>
+     </div>
+ ​
+     <script src="script.js"></script>
+ </body>
+ </html>
