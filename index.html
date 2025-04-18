@@ -1,57 +1,61 @@
 <!DOCTYPE html>
- <html lang="pt-BR">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Lista de Presentes - Nosso Casamento</title>
-     <link rel="stylesheet" href="style.css">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
- </head>
- <body>
-     <header>
-         <h1>Nossa Lista de Presentes</h1>
-         <p>Sua presença é o nosso maior presente, mas se desejar contribuir para nossa nova jornada...</p>
-     </header>
- ​
-     <main class="presentes-grid" id="presentes-lista">
-         </main>
- ​
-     <footer>
-         <div class="footer-links">
-             <button id="pix-btn">Presentear via Pix</button>
-             <button id="admin-btn">Admin</button>
-         </div>
-         <p>&copy; Luana & Felipe - 2025</p>
-     </footer>
- ​
-     <div id="modal-pix" class="modal">
-         <div class="modal-content">
-             <span class="close-button">&times;</span>
-             <h3>Enviar um Presente via Pix</h3>
-             <p>Chave Pix: 24999036283</p>
-             <p id="chave-pix"></p>  <button id="copiar-pix-btn">Copiar Chave Pix</button>
-             <p id="pix-copiado-mensagem" class="mensagem-sucesso" style="display:none;">Chave Pix copiada!</p>
-         </div>
-     </div>
- ​
-     <div id="admin-panel" class="modal">
-         <div class="modal-content">
-             <span class="close-button">&times;</span>
-             <h3>Painel de Administração</h3>
-             <label for="admin-senha">Senha:</label>
-             <input type="password" id="admin-senha">
-             <button id="entrar-admin-btn">Entrar</button>
-             <div id="reservas-lista-admin" style="display:none;">
-                 <h4>Lista de Reservas:</h4>
-                 <ul id="lista-reservas">
-                     </ul>
-             </div>
-             <p id="admin-erro-mensagem" class="mensagem-erro" style="display:none;">Senha incorreta.</p>
-         </div>
-     </div>
- ​
-     <script src="script.js"></script>
- </body>
- </html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lista de presentes para o casamento de Ana e João. Escolha um presente e envie sua escolha via WhatsApp!">
+    <title>Lista de Presentes - Luana & Felipe</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Canvas para as partículas de fundo -->
+    <canvas id="particles-canvas"></canvas>
+
+    <header>
+        <h1>Lista de Presentes</h1>
+        <p>Luana & Felipe</p>
+    </header>
+
+    <main class="presentes-grid" id="presentes-lista"></main>
+
+    <footer>
+        <div class="footer-links">
+            <button id="pix-btn">Presentear via Pix</button>
+            <button id="admin-btn">Admin</button>
+        </div>
+        <p>© 2025 Luana & Felipe. Todos os direitos reservados.</p>
+    </footer>
+
+    <div id="modal-pix" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h3>Presentear via Pix</h3>
+            <p id="chave-pix">Chave Pix: (carregando...)</p>
+            <button id="copiar-pix-btn">Copiar Chave Pix</button>
+            <div id="pix-copiado-mensagem"></div>
+        </div>
+    </div>
+
+    <div id="admin-panel" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h3>Painel de Administração</h3>
+            <label for="admin-senha">Digite a senha:</label>
+            <input type="password" id="admin-senha" placeholder="Senha">
+            <button id="entrar-admin-btn">Entrar</button>
+            <div id="admin-erro-mensagem" style="display: none;"></div>
+            <div id="admin-conteudo" style="display: none;">
+                <h4>Bem-vindo ao Painel de Administração</h4>
+                <p>Você está logado como administrador.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="spinner" class="spinner" style="display: none;">
+        <div class="loader"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
